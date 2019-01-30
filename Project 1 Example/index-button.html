@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Animation Comparison: CSS/Native JS/jQuery | COMP2105 Motion Graphics for Interaction</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        #slider {
+            background: yellow;
+            width: 500px;
+            height: 100px;
+        }
+        h1 {
+            text-align: center;
+            background-color: black;
+            color: white;
+            width: 100px;
+            height: 100px;
+            margin: 0;
+            position: relative;
+            left: 0;
+            /* Pure CSS - Set up transition */
+            transition: all 1s;
+        }
+        /* Add visual style to toggle on/off with JS */
+        .on {
+            left: 400px;
+            background-color: red;
+        }
+    </style>
+    <!-- jQuery - attach script library -->
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script>
+        // jQuery - Set DOM ready
+        $(document).ready(function(){
+            // jQuery - Event handler for onclick
+            $("#slider").click(function(event){
+                // Add/remove CSS class that moves the button
+                $("h1").toggleClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <section id="slider">
+        <h1>Slide me.</h1>
+    </section>
+</body>
+</html>
